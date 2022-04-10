@@ -8,27 +8,17 @@ repositories {
 
 dependencies {
     testImplementation(
-            'com.codeborne:selenide:6.3.4',
-            'org.junit.jupiter:junit-jupiter:5.8.2',
-            'com.sun.xml.bind:jaxb-impl:3.0.2'
+            "com.codeborne:selenide:6.3.5",
+            "com.github.javafaker:javafaker:1.0.2",
+            "org.junit.jupiter:junit-jupiter:5.8.2",
+            "org.slf4j:slf4j-simple:1.7.36"
     )
-    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.8.2')
-    implementation 'org.slf4j:slf4j-nop:1.7.30'
-
-    test {
-        useJUnitPlatform()
-    }
-
-
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
 
 test {
-    useJUnitPlatform()
-}
-
-
-
-tasks.withType(Test) {
     useJUnitPlatform()
 }
